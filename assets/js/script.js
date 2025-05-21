@@ -116,30 +116,49 @@ window.addEventListener("click", () => {
 
 // Criação de cards dos restaurantes
 // Atlterar para criar cards com as informações do banco de dados
-const createCards = Array.from({ length: 100 }).map((_, i) =>
-    `<div class="card">
-        <div class="card-image">
-            <img src="assets/images/foto_restaurante.png" alt="Foto restaurante">
-        </div>
-        <div class="card-info">
-            <h3>Restaurante ${i + 1}</h3>
-            <div>
-                Categoria
-            </div>
-            <div>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span>5,0</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-location-dot"></i>
-                Cidade
-            </div>
-        </div>
-    </div>`);
+// Rick: Alterei para criar os cards com as informações do banco de dados
+async function carregarRestaurantes() {
+    try {
+        const response = await fetch('http://localhost:5000/api/restaurantes');
+        const restaurantes = await response.json();
+
+        const cardsContainer = document.querySelector("#cards_container");
+        cardsContainer.innerHTML = "";
+
+        restaurantes.forEach(restaurante => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <div class="card-image">
+                    <img src="assets/images/foto_restaurante.png" alt="Foto restaurante">
+                </div>
+                <div class="card-info">
+                    <h3>${restaurante.nome}</h3>
+                    <div>
+                        Categoria
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>5,0</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Cidade
+                    </div>
+                </div>
+            `;
+            cardsContainer.appendChild(card);
+        });
+    } catch (error) {
+        console.error("Erro ao carregar restaurantes:", error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", carregarRestaurantes);
 
 // Paginação da página de restaurantes
 let perPage = 12;
