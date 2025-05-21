@@ -314,4 +314,16 @@ function init() {
 }
 
 init();
+// Função de mostrar e ocultar senha
 
+//to tentando fazer o modal abrir mas não está funcionando
+    const botoesVerMais = document.querySelectorAll(".btn-default.btn-ver-mais");
+
+    botoesVerMais.forEach(botao => {
+        botao.addEventListener("click", () => {
+            const modal = botao.parentElement.querySelector(".modal-restaurante");
+            if (modal) {
+                modal.showModal();
+            }
+        });
+    });
