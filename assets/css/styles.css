@@ -295,7 +295,8 @@ dialog a {
 }
 
 #box_forgot_password {
-    padding: 40rem;
+    min-width: 400rem;
+    padding: 40rem 20rem;
 }
 
 #box_forgot_password #email-confirmation {

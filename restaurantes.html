@@ -26,23 +26,6 @@
                 |
                 <button onclick="showRegister()">Cadastro</button>
             </div>
-            <div id="profile">
-                <button id="profile-btn">
-                    <img src="assets/images/foto_perfil.png" alt="Perfil">
-                </button>
-                <div class="profile-options-list">
-                    <div>
-                        <img src="assets/images/foto_perfil.png" alt="Perfil">
-                        <span>Nome</span>
-                    </div>
-                    <hr>
-                    <ul>
-                        <li><a href="perfil_usuario"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
-                        <li><a href="#"><i class="fa-solid fa-question"></i> Ajuda</a></li>
-                        <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="mobile-menu-icon">
                 <button onclick="showMenu()"><i id="menu-icon" class="fa-solid fa-bars"></i></button>
             </div>
@@ -110,13 +93,14 @@
                 restaurante</button>
         </div>
     </dialog>
+    <!-- Precisa ver se dá pra enviar um link de reset de senha no e-mail do cadastro -->
     <dialog id="box_forgot_password">
         <button class="close-btn" type="button" onclick="closeForgotPassword()">
             <i class="fa-solid fa-xmark fa-2xl"></i>
         </button>
         <div id="email-confirmation">
             <div class="input-box">
-                <label class="form-label">Digite seu email para receber um código de confirmação</label>
+                <label class="form-label">Digite seu e-mail</label>
                 <div class="input-field">
                     <input type="email" name="email" id="confirm_email" class="form-control"
                         placeholder="exemplo@exemplo.com">
@@ -256,7 +240,7 @@
                 </div>
             </div>
         </div>
-        <section id="restaurants">  < -- Aqui começa a seção de restaurantes -- >
+        <section id="restaurants"> <!-- Aqui começa a seção de restaurantes -->
             <h1>Restaurantes</h1>
             <div id="cards_container">
                 <div class="card">
@@ -271,7 +255,8 @@
                     <img src="assets\images\restauranteBistro.png" alt="Restaurante 2">
                     <div class="card-content">
                         <h2>Bistrô Delícia</h2>
-                        <p>O Bistrô Delícia é um espaço charmoso e aconchegante que combina sabores sofisticados com um toque caseiro.</p>
+                        <p>O Bistrô Delícia é um espaço charmoso e aconchegante que combina sabores sofisticados com um
+                            toque caseiro.</p>
                         <button class="btn-default">Ver mais</button>
                     </div>
                 </div>
@@ -279,17 +264,21 @@
                     <img src="assets\images\churrascariaBomBife.jpg" alt="Restaurante 3">
                     <div class="card-content">
                         <h2>Churrascaria Bom Bife</h2>
-                        <p>A Churrascaria Bom Bife é um restaurante especializado em churrasco no estilo rodízio, conhecido por oferecer uma grande variedade de carnes nobres assadas na brasa, servidas à vontade.</p>
+                        <p>A Churrascaria Bom Bife é um restaurante especializado em churrasco no estilo rodízio,
+                            conhecido por oferecer uma grande variedade de carnes nobres assadas na brasa, servidas à
+                            vontade.</p>
                         <button class="btn-default">Ver mais</button>
                     </div>
-                 </div>
+                </div>
                 <div class="card">
                     <img src="assets\images\veggieLife.jpg" alt="Restaurante 4">
                     <div class="card-content">
                         <h2>Veggie Life</h2>
-                        <p>Veggie Life é um restaurante especializado em culinária 100% vegetal, oferecendo pratos saudáveis, saborosos e sustentáveis.</p>
+                        <p>Veggie Life é um restaurante especializado em culinária 100% vegetal, oferecendo pratos
+                            saudáveis, saborosos e sustentáveis.</p>
                         <button class="btn-default">Ver mais</button>
                     </div>
+                </div>
         </section>
         <div id="pagination">
             <button class="pagination-btn" id="first">
