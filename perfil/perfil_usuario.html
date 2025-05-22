@@ -1,88 +1,405 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meu Perfil</title>
+    <style>
+        /* RESET e estilo base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #fff7f0;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff6a00;
+        }
+
+        header {
+            background: #ff6a00;
+            padding: 15px 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 10px rgb(255 106 0 / 0.3);
+        }
+
+        header #logo {
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        header #logo i {
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffe3cc;
+        }
+
+        main {
+            flex: 1;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 25px rgb(255 106 0 / 0.15);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .profile-header img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #ff6a00;
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            font-size: 2.8rem;
+            color: #ff4500;
+        }
+
+        .profile-info p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: #ff6a00;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.25s ease;
+        }
+
+        .btn:hover {
+            background: #ff4500;
+        }
+
+        .buttons-group {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        section h2 {
+            margin: 30px 0 15px 0;
+            color: #ff6a00;
+            font-weight: 700;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #ff6a00;
+            padding-bottom: 5px;
+        }
+
+        form {
+            margin-top: 15px;
+            display: none;
+            background: #fff3e6;
+            padding: 20px 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgb(255 106 0 / 0.2);
+        }
+
+        form.active {
+            display: block;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #b34700;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 18px;
+            border: 2px solid #ff6a00;
+            border-radius: 7px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus {
+            border-color: #ff4500;
+            outline: none;
+        }
+
+        form button[type="submit"] {
+            background: #ff6a00;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        form button[type="submit"]:hover {
+            background: #ff4500;
+        }
+
+        .message {
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 7px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .contribuicoes {
+            margin-top: 30px;
+            font-size: 1.15rem;
+            color: #555;
+        }
+
+        .user-reviews .review {
+            background: #fff7f0;
+            border-left: 4px solid #ff6a00;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 7px;
+        }
+
+        .user-reviews .review h3 {
+            color: #ff6a00;
+            margin-bottom: 6px;
+        }
+
+        .user-reviews .review p {
+            font-style: italic;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        .user-reviews .review small,
+        .user-reviews .review .restaurant {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-info h1 {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        
-        <h1>Meu Perfil</h1>
-        <img class="foto_perfil" src="assets/images/foto_perfil.png" alt="Foto de perfil">
-        <p>
-            @username
-        </p>
-        <p>
-            Seguidores: 0
-            Seguindo: 0
-        </p>
-    </div>
-    <form>
-        <h2>Informações Pessoais</h2>
-        <p>
-            <label for="nome">Primeiro nome</label>
-            <input type="text" id="nome" name="nome" placeholder="PrimeiroNome" disabled>
-        </p>
-        <p>
-            <label for="sobrenome">Sobrenome</label>
-            <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" disabled>
-        </p>
-        <p>
-            <label for="data-nascimento">Data de nascimento</label>
-            <input type="date" id="data-nascimento" name="data-nascimento" disabled>
-        </p>
-        <p>
-            <label for="genero">Gênero</label>
-            <input type="radio" name="genero" id="genero" value="masculino" disabled> Masculino<br>
-            <input type="radio" name="genero" id="genero" value="feminino" disabled> Feminino<br>
-            <input type="radio" name="genero" id="genero" value="outro" disabled> Outro
-        </p>
-        <p>
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="+55 11 99999-9999" disabled>
-        </p>
-        <p>
-            <button type="button">Alterar Informações</button>
-            <h2>Informações de Segurança</h2>
-        <p>
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="example@example.com" disabled>
-        </p>
-        <p>
-            <button type="button">Alterar Email</button>
-        </p>
-        <p>
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha" placeholder="" disabled>
-        </p>
-        <p>
-            <button type="button">Alterar Senha</button>
-        </p>
-    </form>
-    <div>
-        <h2>Avaliações</h2>
+    <header>
+        <nav>
+            <div id="logo">
+                <a href="index.html"><i class="fa-solid fa-utensils"></i> CoolMida</a>
+            </div>
+            <div class="menu-items">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="restaurantes.html">Restaurantes</a></li>
+                    <li><a href="feed.html">Feed</a></li>
+                </ul>
+            </div>
+            <div class="access">
+                <button onclick="showLogin()">Login</button>
+                |
+                <button onclick="showRegister()">Cadastro</button>
+            </div>
+            <div id="profile">
+                <button id="profile-btn">
+                    <img src="assets/images/foto_perfil.png" alt="Perfil">
+                </button>
+                <div class="profile-options-list">
+                    <div>
+                        <img src="assets/images/foto_perfil.png" alt="Perfil">
+                        <span>Nome</span>
+                    </div>
+                    <hr>
+                    <ul>
+                        <li><a href="perfil_usuario"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
+                        <li><a href="#"><i class="fa-solid fa-question"></i> Ajuda</a></li>
+                        <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mobile-menu-icon">
+                <button onclick="showMenu()"><i id="menu-icon" class="fa-solid fa-bars"></i></button>
+            </div>
+        </nav>
+        <div class="menu-items mobile-menu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
+                <li><a href="feed.html">Feed</a></li>
+            </ul>
+            <div class="access">
+                <button onclick="showLogin()">Login</button>
+                <button onclick="showRegister()">Cadastro</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="profile-header">
+            <img src="../assets/images/foto_perfil.png" alt="Foto de Perfil" />
+            <div class="profile-info">
+                <h1 id="display-name">João Silva</h1>
+                <p>@joaosilva</p>
+                <div class="buttons-group">
+                    <button class="btn" id="edit-profile-btn">Editar Perfil</button>
+                    <button class="btn" id="change-password-btn">Alterar Senha</button>
+                </div>
+            </div>
+        </div>
+        <div class="contribuicoes" id="contribuicoes">
+            Avaliações Realizadas: <strong id="count-reviews">5</strong>
+        </div>
 
-        <h3>Lorem</h3>
-        <p>00/00/0000</p>
-        <p>⭐⭐⭐⭐⭐</p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque deserunt assumenda quaerat quibusdam, sed quod modi dolore, atque, nihil eius velit quis in quos ipsam iusto aperiam! Libero, recusandae officia.
-        </p>
-        <p>
-            Curtidas: 0
-            Comentários: 0
-        </p>
-        <p>
-            Ver mais
-        </p>
-        <p>
-            <button>Deletar conta</button>
-        </p>
-    </div>
+        <!-- Formulário Editar Perfil -->
+        <form id="edit-profile-form" method="POST" action="/atualizar-perfil" novalidate>
+            <h2>Editar Perfil</h2>
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required value="João Silva" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required value="joao.silva@example.com" />
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" required value="(11) 98765-4321" />
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" name="endereco" required value="Rua Exemplo, 123, São Paulo - SP" />
+            <button type="submit">Salvar Alterações</button>
+            <div class="message success" id="edit-profile-success">Perfil atualizado com sucesso!</div>
+            <div class="message error" id="edit-profile-error">Erro ao atualizar perfil. Tente novamente.</div>
+        </form>
+
+        <!-- Formulário Alterar Senha -->
+        <form id="change-password-form" method="POST" action="/alterar-senha" novalidate>
+            <h2>Alterar Senha</h2>
+            <label for="current-password">Senha Atual</label>
+            <input type="password" id="current-password" name="currentPassword" required minlength="6" />
+            <label for="new-password">Nova Senha</label>
+            <input type="password" id="new-password" name="newPassword" required minlength="6" />
+            <label for="confirm-password">Confirmar Nova Senha</label>
+            <input type="password" id="confirm-password" name="confirmPassword" required minlength="6" />
+            <button type="submit">Atualizar Senha</button>
+            <div class="message success" id="change-password-success">Senha alterada com sucesso!</div>
+            <div class="message error" id="change-password-error">Erro ao alterar senha. Verifique os dados.</div>
+        </form>
+
+        <!-- Avaliações do usuário -->
+        <section class="user-reviews">
+            <h2>Minhas Avaliações</h2>
+            <div class="review">
+                <h3>Happy Hour - Outback</h3>
+                <p>Fui em um happy hour com o pessoal do trabalho no final do ano de 2024, a experiência foi ótima,
+                    pedimos o rodízio...</p>
+                <small>Data: 20/12/2024</small><br>
+                <span class="restaurant">Restaurante: Outback Moema</span>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Seleciona os botões e os formulários
+        const editProfileBtn = document.getElementById('edit-profile-btn');
+        const changePasswordBtn = document.getElementById('change-password-btn');
+        const editProfileForm = document.getElementById('edit-profile-form');
+        const changePasswordForm = document.getElementById('change-password-form');
+
+        // Função para esconder ambos formulários
+        function hideForms() {
+            editProfileForm.classList.remove('active');
+            changePasswordForm.classList.remove('active');
+        }
+
+        // Mostrar formulário editar perfil e esconder o outro
+        editProfileBtn.addEventListener('click', () => {
+            if (editProfileForm.classList.contains('active')) {
+                hideForms();
+            } else {
+                editProfileForm.classList.add('active');
+                changePasswordForm.classList.remove('active');
+                editProfileForm.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Mostrar formulário alterar senha e esconder o outro
+        changePasswordBtn.addEventListener('click', () => {
+            if (changePasswordForm.classList.contains('active')) {
+                hideForms();
+            } else {
+                changePasswordForm.classList.add('active');
+                editProfileForm.classList.remove('active');
+                changePasswordForm.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Aqui você pode adicionar lógicas para submissão dos formulários via AJAX, 
+        // validações extras e exibir mensagens de sucesso/erro dinâmicas, etc.
+    </script>
+    <script src="https://kit.fontawesome.com/51087b88d3.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
