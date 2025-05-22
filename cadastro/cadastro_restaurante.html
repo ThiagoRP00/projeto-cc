@@ -170,5 +170,34 @@
         }
     });
 </script>
+    <script>
+document.querySelector("form").addEventListener("submit", async (event) => {
+	event.preventDefault();
+
+	const email = document.getElementById("email").value;
+	const senha = document.getElementById("password_login").value;
+
+	if (!email || !senha) {
+		alert("Preencha todos os campos");
+		return;
+	}
+
+	try {
+		const response = await fetch(`https://projeto-cc.onrender.com/api/login-restaurante?email=${email}&senha=${senha}`, {
+			method: "GET",
+		});
+		if (response.ok) {
+			const result = await response.text();
+			alert("Login com sucesso: " + result);
+		} else {
+			const errorData = await response.text();
+			alert("erro login: " + errorData);
+		}
+	} catch (error) {
+		console.error("Erro:", error);
+		alert("Erro conexão com o servidor");
+	}
+});
+</script>
 </html>
 
