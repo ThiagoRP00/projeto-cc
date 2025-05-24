@@ -75,7 +75,7 @@ header ul {
     color: var(--main-bg-color);
 }
 
-nav {
+header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -486,52 +486,6 @@ input:-webkit-autofill {
     color: var(--secondary-color);
 }
 
-#banner {
-    width: 100%;
-    height: 250rem;
-    background-color: #fff;
-}
-
-#banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#profile_photo {
-    width: 150rem;
-    height: 150rem;
-    border: 5rem solid var(--main-bg-color);
-    border-radius: 50%;
-    margin-left: 50rem;
-    margin-top: -75rem;
-
-}
-
-#profile_photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-#change_photo {
-    width: 100%;
-    height: 100%;
-    background-color: var(--secondary-color);
-}
-
-#restaurant_info {
-    display: flex;
-    flex-direction: column;
-    margin: 1% 5%;
-    gap: 20rem;
-}
-
-#restaurant_info .rating {
-    color: var(--quaternary-color);
-}
-
 #main_container_home section:not(#hero) {
     margin: 0 5%;
 }
@@ -593,7 +547,7 @@ input:-webkit-autofill {
     display: flex;
     justify-content: center;
     gap: 50rem;
-    margin-top: 32px;
+    margin-top: 32rem;
 }
 
 .feature {
@@ -868,6 +822,233 @@ input:-webkit-autofill {
     color: var(--main-bg-color);
 }
 
+#main_container_profile {
+    display: flex;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 91vh;
+    background-color: var(--secondary-color);
+    position: relative;
+    transition: all 0.5s;
+}
+
+#sidebar_content {
+    padding: 12rem;
+}
+
+#side_items {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    list-style: none;
+}
+
+.side-item {
+    border-radius: 8rem;
+    padding: 14rem;
+    cursor: pointer;
+}
+
+.side-item.active {
+    background-color: var(--main-bg-color);
+}
+
+.side-item:hover:not(.active),
+#logout button:hover {
+    background-color: #049e75;
+    transition: all 0.3s;
+}
+
+.side-item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.side-item.active a {
+    color: var(--main-text-color);
+}
+
+.side-item a i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+}
+
+#logout {
+    border-top: 1rem solid var(--main-bg-color);
+    padding: 12rem;
+}
+
+#logout button {
+    padding: 12rem;
+    display: flex;
+    align-items: center;
+    border-radius: 8rem;
+    background-color: transparent;
+    color: #fff;
+}
+
+#sidebar_btn {
+    position: absolute;
+    top: 30rem;
+    right: -12rem;
+    color: var(--main-bg-color);
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidebar_btn i {
+    transition: transform 0.3s ease;
+}
+
+.open-sidebar #sidebar_btn i {
+    transform: rotate(180deg);
+}
+
+.item-description {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#sidebar.open-sidebar .item-description {
+    width: 110rem;
+}
+
+#sidebar.open-sidebar .side-item a {
+    justify-content: flex-start;
+    gap: 14rem;
+}
+
+#profile_content {
+    margin: 0 auto;
+    padding: 3% 0;
+}
+
+#profile_header {
+    display: flex;
+    align-items: center;
+    gap: 25rem;
+}
+
+#profile_photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130rem;
+    height: 130rem;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    background-image: url('../images/foto_perfil.png');
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+}
+
+#profile_photo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--input-text-color);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#profile_photo:hover::after {
+    opacity: .6;
+}
+
+#profile_photo input {
+    display: none;
+}
+
+#profile_photo i {
+    display: none;
+}
+
+#profile_photo:hover {
+    cursor: pointer;
+}
+
+#profile_photo:hover i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20rem;
+    color: var(--main-bg-color);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#profile_photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+#profile_info {
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
+}
+
+#profile_info span {
+    font-size: 14rem;
+    color: var(--input-text-color);
+}
+
+#profile_details {
+    display: flex;
+    gap: 20rem;
+}
+
+#banner {
+    width: 100%;
+    height: 250rem;
+    background-color: #fff;
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#change_photo {
+    height: 100%;
+}
+
+#restaurant_info {
+    display: flex;
+    flex-direction: column;
+    margin: 1% 5%;
+    gap: 20rem;
+}
+
+#restaurant_info .rating {
+    color: var(--quaternary-color);
+}
+
 footer {
     width: 100%;
     color: var(--main-bg-color);
@@ -965,10 +1146,14 @@ footer ul {
     #filter_content {
         width: 80%;
     }
+
+    #profile_content {
+        margin: 0 5%;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    nav {
+    header nav {
         padding: 20rem;
     }
 
@@ -1046,6 +1231,19 @@ footer ul {
 
     #filter_content {
         width: 100%;
+    }
+
+    #sidebar {
+        position: fixed;
+    }
+
+    #profile_content {
+        padding-left: 72rem;
+    }
+
+    #profile_header {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     footer ul {

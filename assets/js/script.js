@@ -76,6 +76,10 @@ if (btnProfile && profileOptions) {
     });
 }
 
+document.getElementById('sidebar_btn').addEventListener('click', function () {
+    document.getElementById('sidebar').classList.toggle('open-sidebar');
+    console.log('Sidebar button clicked');
+});
 
 // Botão de mostrar filtros de pesquisa de restaurantes
 const btnFilter = document.querySelector(".btn-filter");

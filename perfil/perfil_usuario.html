@@ -4,139 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <title>Meu Perfil</title>
     <style>
-        /* RESET e estilo base */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: #fff7f0;
-            color: #333;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        a {
-            text-decoration: none;
-            color: #ff6a00;
-        }
-
-        header {
-            background: #ff6a00;
-            padding: 15px 30px;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 3px 10px rgb(255 106 0 / 0.3);
-        }
-
-        header #logo {
-            font-weight: 700;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-            cursor: pointer;
-        }
-
-        header #logo i {
-            margin-right: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            font-weight: 600;
-            color: white;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #ffe3cc;
-        }
-
-        main {
-            flex: 1;
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 12px 25px rgb(255 106 0 / 0.15);
-        }
-
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .profile-header img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 4px solid #ff6a00;
-            object-fit: cover;
-        }
-
-        .profile-info h1 {
-            font-size: 2.8rem;
-            color: #ff4500;
-        }
-
-        .profile-info p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .btn {
-            background: #ff6a00;
-            border: none;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.25s ease;
-        }
-
-        .btn:hover {
-            background: #ff4500;
-        }
-
-        .buttons-group {
-            margin-top: 25px;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
         section h2 {
             margin: 30px 0 15px 0;
-            color: #ff6a00;
+            color: var(--primary-color);
             font-weight: 700;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #ff6a00;
+            font-size: 18rem;
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 5px;
-        }
-
-        form {
-            margin-top: 15px;
-            display: none;
-            background: #fff3e6;
-            padding: 20px 25px;
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgb(255 106 0 / 0.2);
         }
 
         form.active {
@@ -159,7 +36,7 @@
             margin-bottom: 18px;
             border: 2px solid #ff6a00;
             border-radius: 7px;
-            font-size: 1rem;
+            font-size: 16rem;
             transition: border-color 0.3s ease;
         }
 
@@ -180,32 +57,9 @@
         }
 
         form button[type="submit"]:hover {
-            background: #ff4500;
+            background: var(--secondary-color);
         }
 
-        .message {
-            margin: 15px 0;
-            padding: 12px;
-            border-radius: 7px;
-            font-weight: 600;
-            display: none;
-        }
-
-        .message.success {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .message.error {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .contribuicoes {
-            margin-top: 30px;
-            font-size: 1.15rem;
-            color: #555;
-        }
 
         .user-reviews .review {
             background: #fff7f0;
@@ -228,25 +82,8 @@
 
         .user-reviews .review small,
         .user-reviews .review .restaurant {
-            font-size: 0.9rem;
+            font-size: 9rem;
             color: #777;
-        }
-
-        @media (max-width: 600px) {
-            .profile-header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .profile-info h1 {
-                font-size: 2.2rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
         }
     </style>
 </head>
@@ -259,9 +96,9 @@
             </div>
             <div class="menu-items">
                 <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="restaurantes.html">Restaurantes</a></li>
-                    <li><a href="feed.html">Feed</a></li>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../restaurantes.html">Restaurantes</a></li>
+                    <li><a href="../feed.html">Feed</a></li>
                 </ul>
             </div>
             <div class="access">
@@ -271,11 +108,11 @@
             </div>
             <div id="profile">
                 <button id="profile-btn">
-                    <img src="assets/images/foto_perfil.png" alt="Perfil">
+                    <img src="../assets/images/foto_perfil.png" alt="Perfil">
                 </button>
                 <div class="profile-options-list">
                     <div>
-                        <img src="assets/images/foto_perfil.png" alt="Perfil">
+                        <img src="../assets/images/foto_perfil.png" alt="Perfil">
                         <span>Nome</span>
                     </div>
                     <hr>
@@ -292,9 +129,9 @@
         </nav>
         <div class="menu-items mobile-menu">
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="restaurantes.html">Restaurantes</a></li>
-                <li><a href="feed.html">Feed</a></li>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../restaurantes.html">Restaurantes</a></li>
+                <li><a href="../feed.html">Feed</a></li>
             </ul>
             <div class="access">
                 <button onclick="showLogin()">Login</button>
@@ -302,65 +139,124 @@
             </div>
         </div>
     </header>
-    <main>
-        <div class="profile-header">
-            <img src="../assets/images/foto_perfil.png" alt="Foto de Perfil" />
-            <div class="profile-info">
-                <h1 id="display-name">João Silva</h1>
-                <p>@joaosilva</p>
-                <div class="buttons-group">
-                    <button class="btn" id="edit-profile-btn">Editar Perfil</button>
-                    <button class="btn" id="change-password-btn">Alterar Senha</button>
+    <main id="main_container_profile">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <ul id="side_items">
+                    <li class="side-item active">
+                        <a href="#">
+                            <i class="fa-solid fa-address-card"></i>
+                            <span class="item-description">
+                                Informações
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">
+                            <i class="fa-solid fa-lock"></i>
+                            <span class="item-description">
+                                Segurança
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="item-description">
+                                Notificações
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">
+                            <i class="fa-solid fa-utensils"></i>
+                            <span class="item-description">
+                                Preferências
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="item-description">
+                                Avaliações
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <button id="sidebar_btn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <div id="logout">
+                <button>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-description">
+                        Sair
+                    </span>
+                </button>
+            </div>
+        </nav>
+        <section id="profile_content">
+            <div id="profile_header">
+                <label id="profile_photo">
+                    <input type="file" accept="image/*">
+                    <i class="fa-solid fa-camera"></i>
+                </label>                
+                <div id="profile_info">
+                    <div>
+                        <h1>João Silva</h1>
+                        <span>@joaosilva</span>
+                    </div>
+                    <div id="profile_details">
+                        <p>Seguidores: <strong id="count-followers">5</strong></p>
+                        <p>Seguindo: <strong id="count-following">10</strong></p>
+                        <p>Avaliações: <strong id="count-reviews">3</strong></p>
+                    </div>
                 </div>
+
             </div>
-        </div>
-        <div class="contribuicoes" id="contribuicoes">
-            Avaliações Realizadas: <strong id="count-reviews">5</strong>
-        </div>
 
-        <!-- Formulário Editar Perfil -->
-        <form id="edit-profile-form" method="POST" action="/atualizar-perfil" novalidate>
-            <h2>Editar Perfil</h2>
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" required value="João Silva" />
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required value="joao.silva@example.com" />
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" required value="(11) 98765-4321" />
-            <label for="endereco">Endereço</label>
-            <input type="text" id="endereco" name="endereco" required value="Rua Exemplo, 123, São Paulo - SP" />
-            <button type="submit">Salvar Alterações</button>
-            <div class="message success" id="edit-profile-success">Perfil atualizado com sucesso!</div>
-            <div class="message error" id="edit-profile-error">Erro ao atualizar perfil. Tente novamente.</div>
-        </form>
 
-        <!-- Formulário Alterar Senha -->
-        <form id="change-password-form" method="POST" action="/alterar-senha" novalidate>
-            <h2>Alterar Senha</h2>
-            <label for="current-password">Senha Atual</label>
-            <input type="password" id="current-password" name="currentPassword" required minlength="6" />
-            <label for="new-password">Nova Senha</label>
-            <input type="password" id="new-password" name="newPassword" required minlength="6" />
-            <label for="confirm-password">Confirmar Nova Senha</label>
-            <input type="password" id="confirm-password" name="confirmPassword" required minlength="6" />
-            <button type="submit">Atualizar Senha</button>
-            <div class="message success" id="change-password-success">Senha alterada com sucesso!</div>
-            <div class="message error" id="change-password-error">Erro ao alterar senha. Verifique os dados.</div>
-        </form>
+            <!-- Formulário Editar Perfil -->
+            <form id="edit-profile-form" method="POST" action="/atualizar-perfil" novalidate>
+                <h2>Editar Perfil</h2>
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" required value="João Silva">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required value="joao.silva@example.com">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" required value="(11) 98765-4321">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="endereco" required value="Rua Exemplo, 123, São Paulo - SP">
+                <button type="submit">Salvar Alterações</button>
+            </form>
 
-        <!-- Avaliações do usuário -->
-        <section class="user-reviews">
-            <h2>Minhas Avaliações</h2>
-            <div class="review">
-                <h3>Happy Hour - Outback</h3>
-                <p>Fui em um happy hour com o pessoal do trabalho no final do ano de 2024, a experiência foi ótima,
-                    pedimos o rodízio...</p>
-                <small>Data: 20/12/2024</small><br>
-                <span class="restaurant">Restaurante: Outback Moema</span>
-            </div>
+            <!-- Formulário Alterar Senha -->
+            <form id="change-password-form" method="POST" action="/alterar-senha" novalidate>
+                <h2>Alterar Senha</h2>
+                <label for="current-password">Senha Atual</label>
+                <input type="password" id="current-password" name="currentPassword" required minlength="6">
+                <label for="new-password">Nova Senha</label>
+                <input type="password" id="new-password" name="newPassword" required minlength="6">
+                <label for="confirm-password">Confirmar Nova Senha</label>
+                <input type="password" id="confirm-password" name="confirmPassword" required minlength="6">
+                <button type="submit">Atualizar Senha</button>
+            </form>
+
+            <!-- Avaliações do usuário -->
+            <section class="user-reviews">
+                <h2>Minhas Avaliações</h2>
+                <div class="review">
+                    <h3>Happy Hour - Outback</h3>
+                    <p>Fui em um happy hour com o pessoal do trabalho no final do ano de 2024, a experiência foi ótima,
+                        pedimos o rodízio...</p>
+                    <small>Data: 20/12/2024</small><br>
+                    <span class="restaurant">Restaurante: Outback Moema</span>
+                </div>
+            </section>
         </section>
     </main>
-
     <script>
         // Seleciona os botões e os formulários
         const editProfileBtn = document.getElementById('edit-profile-btn');
@@ -396,10 +292,9 @@
             }
         });
 
-        // Aqui você pode adicionar lógicas para submissão dos formulários via AJAX, 
-        // validações extras e exibir mensagens de sucesso/erro dinâmicas, etc.
     </script>
     <script src="https://kit.fontawesome.com/51087b88d3.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>
