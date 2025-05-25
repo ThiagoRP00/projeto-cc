@@ -142,7 +142,6 @@
                     Comece Agora
                 </button>
             </div>
-
             <div id="hero_image"></div>
         </section>
         <section id="features_container">
@@ -203,16 +202,77 @@
                 </a>
             </div>
             <ul>
-                <li><a href="#">Sobre nós</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Política de Privacidade</a></li>
-                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#" onclick="showAbout()">Sobre nós</a></li>
+                <li><a href="#" onclick="showContact()">Contato</a></li>
+                <li><a href="#" onclick="showPrivacyPolicy()">Política de Privacidade</a></li>
+                <li><a href="#" onclick="showTermsOfUse()">Termos de uso</a></li>
             </ul>
         </div>
         <div id="footer_copyright">
             Copyright &copy; 2025 all rights reserved
         </div>
     </footer>
+    <dialog id="box_about">
+        <button class="close-btn" type="button" onclick="closeAbout()">
+            <i class="fa-solid fa-xmark fa-2xl"></i>
+        </button>
+        <h2>Sobre nós</h2>
+        <p>
+            CoolMida é uma startup criada em 2025 com o objetivo de facilitar a vida de quem
+            quer encontrar bons restaurantes com base em avaliações reais de outros clientes. A
+            ideia surgiu entre estudantes de Ciência da Computação que sentiram falta de uma
+            plataforma confiável e regionalizada para ajudar na escolha de onde comer,
+            especialmente em cidades com poucos recursos online.
+            <br>
+            A empresa nasceu da necessidade de unir tecnologia à experiência do consumidor,
+            permitindo que qualquer pessoa compartilhe opiniões, dê notas e escreva comentários
+            sobre estabelecimentos que visitou. O site também oferece filtros de busca por tipo
+            de comida, formas de pagamento, acessibilidade e muito mais, ajudando o usuário a
+            encontrar o restaurante ideal com rapidez e praticidade.
+            <br>
+            Atualmente, a CoolMida está em fase de desenvolvimento, com um site simples
+            sendo criado para fins acadêmicos, mas com potencial para se tornar um produto real
+            no futuro. A equipe já projeta melhorias como a criação de um aplicativo, sistema de
+            login para usuários e restaurantes, além de funcionalidades como recomendação
+            personalizada.
+            <br>
+            A plataforma é baseada em tecnologias web como HTML e CSS, com planos futuros
+            de incluir banco de dados e linguagem de programação para tornar o sistema
+            dinâmico. A ideia é evoluir para uma solução robusta, com foco na experiência do
+            usuário, confiabilidade das avaliações e apoio ao comércio local.
+        </p>
+    </dialog>
+    <dialog id="box_contact">
+        <button class="close-btn" type="button" onclick="closeContact()">
+            <i class="fa-solid fa-xmark fa-2xl"></i>
+        </button>
+        <h2>Contato</h2>
+        <p>
+            E-mail: contato@coolmida.com<br>
+            Telefone: (11) 99999-9999<br>
+            Endereço: Rua Fictícia, 123, São Paulo - SP
+        </p>
+    </dialog>
+    <dialog id="box_privacy_policy">
+        <button class="close-btn" type="button" onclick="closePrivacyPolicy()">
+            <i class="fa-solid fa-xmark fa-2xl"></i>
+        </button>
+        <h2>Política de Privacidade</h2>
+        <p>
+            Seus dados são tratados com segurança e respeito. Não compartilhamos informações pessoais com terceiros sem
+            consentimento. Para mais detalhes, consulte nossa política completa.
+        </p>
+    </dialog>
+    <dialog id="box_terms_of_use">
+        <button class="close-btn" type="button" onclick="closeTermsOfUse()">
+            <i class="fa-solid fa-xmark fa-2xl"></i>
+        </button>
+        <h2>Termos de uso</h2>
+        <p>
+            Ao utilizar o CoolMida, você concorda com nossos termos de uso. O conteúdo publicado é de responsabilidade
+            dos usuários. Reservamo-nos o direito de moderar avaliações e comentários.
+        </p>
+    </dialog>
     <script src="https://kit.fontawesome.com/51087b88d3.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>

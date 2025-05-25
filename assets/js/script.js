@@ -16,8 +16,12 @@ function showMenu() {
 const modalLogin = document.querySelector('#box_login');
 const modalRegister = document.querySelector('#box_register');
 const modalForgotPassword = document.querySelector('#box_forgot_password');
+const modalAbout = document.querySelector('#box_about');
+const modalContact = document.querySelector('#box_contact');
+const modalPrivacyPolicy = document.querySelector('#box_privacy_policy');
+const modalTermsOfUse = document.querySelector('#box_terms_of_use');
 
-// Funções de abrir e fechar modais de login e cadastro
+// Funções de abrir e fechar modais
 function showLogin() {
     modalLogin.showModal();
 }
@@ -42,6 +46,38 @@ function showForgotPassword() {
 
 function closeForgotPassword() {
     modalForgotPassword.close();
+}
+
+function showAbout() {
+    modalAbout.showModal();
+}
+
+function closeAbout() {
+    modalAbout.close();
+}
+
+function showContact() {
+    modalContact.showModal();
+}
+
+function closeContact() {
+    modalContact.close();
+}
+
+function showPrivacyPolicy() {
+    modalPrivacyPolicy.showModal();
+} 
+
+function closePrivacyPolicy() {
+    modalPrivacyPolicy.close();
+}
+
+function showTermsOfUse() {
+    modalTermsOfUse.showModal();
+}
+
+function closeTermsOfUse() {
+    modalTermsOfUse.close();
 }
 
 // Botão de mostrar e ocultar senha

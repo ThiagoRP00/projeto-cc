@@ -238,6 +238,10 @@ dialog a {
 .close-btn {
     background: transparent;
     color: var(--main-text-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15rem 15rem 0;
 }
 
 .modal-header {
@@ -269,14 +273,6 @@ dialog a {
 
 .register {
     text-align: center;
-}
-
-#box_register .close-btn,
-#box_forgot_password .close-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 15rem 15rem 0;
 }
 
 #box_register {
@@ -1093,7 +1089,7 @@ input:-webkit-autofill {
     margin-bottom: 5%;
 }
 
-#restaurant_info > section:not(#restaurant_header) {
+#restaurant_info>section:not(#restaurant_header) {
     display: flex;
     flex-direction: column;
     gap: 20rem;
@@ -1203,12 +1199,15 @@ footer ul {
 
 @media screen and (max-width: 1170px) {
     #hero {
-        min-height: 50vh;
+        flex-direction: column;
+        height: auto;
+        gap: 30rem;
     }
 
-    #home_image,
-    #home_image img {
-        display: none;
+    #hero_image {
+        background: url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+        width: 100%;
+        border-radius: 12rem;
     }
 
     #cta {
@@ -1289,12 +1288,10 @@ footer ul {
     }
 
     #hero {
-        min-height: 100vh;
     }
 
-    #home_image,
-    #home_image img {
-        display: none;
+    #hero_image {
+        min-height: 200rem;
     }
 
     #cta {
