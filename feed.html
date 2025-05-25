@@ -26,6 +26,23 @@
                 |
                 <button onclick="showRegister()">Cadastro</button>
             </div>
+            <div class="profile">
+                <button id="profile-btn">
+                    <img src="../assets/images/foto_perfil.png" alt="Perfil">
+                </button>
+                <div class="profile-options-list">
+                    <div>
+                        <img src="../assets/images/foto_perfil.png" alt="Perfil">
+                        <span>Nome</span>
+                    </div>
+                    <hr>
+                    <ul>
+                        <li><a href="perfil_usuario.html"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
+                        <li><a href="#"><i class="fa-solid fa-question"></i> Ajuda</a></li>
+                        <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="mobile-menu-icon">
                 <button onclick="showMenu()"><i id="menu-icon" class="fa-solid fa-bars"></i></button>
             </div>
@@ -147,7 +164,7 @@
         // Criação de avaliações (não funciona quando coloca no arquivo script.js)
         // Alterar para gerar avaliações com as informações do banco de dados
         const createReviews = Array.from({ length: 100 }).map((_, i) =>
-            `<div class="review";">
+            `<div class="review">
             <div class="review-info">
                 <div>
                     <a href="#"><img src="assets/images/foto_perfil.png"></a>

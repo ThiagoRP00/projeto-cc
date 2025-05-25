@@ -55,7 +55,6 @@ passwordIcons.forEach(icon => {
     })
 });
 
-
 // Botão de mostrar opções de perfil
 // Adicionar função de mostrar essa parte e ocultar botões de login e cadastro depois que o usuário fizer login 
 const btnProfile = document.querySelector("#profile-btn");
@@ -86,6 +85,31 @@ document.querySelectorAll('.side-item').forEach(item => {
         this.classList.add('active');
     });
 });
+
+const sideItems = document.querySelectorAll('#side_items .side-item');
+const forms = [
+    document.getElementById('form_1'),
+    document.getElementById('form_2'),
+    document.getElementById('form_3'),
+    document.getElementById('form_4'),
+    document.getElementById('user_reviews')
+];
+
+sideItems.forEach((item, idx) => {
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        sideItems.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+
+        forms.forEach(f => f.style.display = 'none');
+        if (forms[idx]) {
+            forms[idx].style.display = 'flex';
+        }
+    });
+});
+
+forms.forEach((f, i) => f.style.display = i === 0 ? 'flex' : 'none');
 
 // Botão de mostrar filtros de pesquisa de restaurantes
 const btnFilter = document.querySelector(".btn-filter");

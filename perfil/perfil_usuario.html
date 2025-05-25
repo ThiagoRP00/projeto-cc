@@ -6,32 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <title>Meu Perfil</title>
-    <style>
-        .user-reviews .review {
-            background: #fff7f0;
-            border-left: 4px solid #ff6a00;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 7px;
-        }
-
-        .user-reviews .review h3 {
-            color: #ff6a00;
-            margin-bottom: 6px;
-        }
-
-        .user-reviews .review p {
-            font-style: italic;
-            color: #444;
-            margin-bottom: 6px;
-        }
-
-        .user-reviews .review small,
-        .user-reviews .review .restaurant {
-            font-size: 9rem;
-            color: #777;
-        }
-    </style>
 </head>
 
 <body>
@@ -47,12 +21,12 @@
                     <li><a href="../feed.html">Feed</a></li>
                 </ul>
             </div>
-            <div class="access">
+            <div class="access active">
                 <button onclick="showLogin()">Login</button>
                 |
                 <button onclick="showRegister()">Cadastro</button>
             </div>
-            <div id="profile">
+            <div class="profile">
                 <button id="profile-btn">
                     <img src="../assets/images/foto_perfil.png" alt="Perfil">
                 </button>
@@ -63,7 +37,7 @@
                     </div>
                     <hr>
                     <ul>
-                        <li><a href="perfil_usuario"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
+                        <li><a href="perfil_usuario.html"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
                         <li><a href="#"><i class="fa-solid fa-question"></i> Ajuda</a></li>
                         <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
                     </ul>
@@ -168,7 +142,7 @@
                 </div>
 
             </div>
-            <form id="form_1">
+            <form id="form_1" class="active">
                 <h2>Informações Pessoais</h2>
                 <div class="input-container">
                     <div class="input-box">
@@ -367,6 +341,10 @@
                         <label for="churrasco">Churrasco</label>
                     </div>
                     <div class="cooking-selection">
+                        <input type="checkbox" id="pizza">
+                        <label for="pizza">Pizza / Esfiha</label>
+                    </div>
+                    <div class="cooking-selection">
                         <input type="checkbox" id="fruto-mar">
                         <label for="fruto-mar">Frutos do Mar</label>
                     </div>
@@ -384,54 +362,75 @@
                 </div>
             </form>
 
-            <section class="user-reviews">
+            <section id="user_reviews">
                 <h2>Minhas Avaliações</h2>
                 <div class="review">
-                    <h3>Happy Hour - Outback</h3>
-                    <p>Fui em um happy hour com o pessoal do trabalho no final do ano de 2024, a experiência foi ótima,
-                        pedimos o rodízio...</p>
-                    <small>Data: 20/12/2024</small><br>
-                    <span class="restaurant">Restaurante: Outback Moema</span>
+                    <div class="review-info">
+                        <div>
+                            <a href="#"><img src="../assets/images/foto_perfil.png" alt="Foto de perfil"></a>
+                        </div>
+                        <div class="review-details">
+                            <div>
+                                <a href="#"><strong>Fulano de Tal</strong></a> postou uma avaliação de
+                                <a href="#"><strong>Restaurante</strong></a>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>5,0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <div class="review-actions">
+                        <button>
+                            <i class="fa-solid fa-thumbs-up"></i> Curtir
+                        </button>
+                        <button>
+                            <i class="fa-solid fa-comment"></i> Comentar
+                        </button>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="review-info">
+                        <div>
+                            <a href="#"><img src="../assets/images/foto_perfil.png" alt="Foto de perfil"></a>
+                        </div>
+                        <div class="review-details">
+                            <div>
+                                <a href="#"><strong>Fulano de Tal</strong></a> postou uma avaliação de
+                                <a href="#"><strong>Restaurante</strong></a>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>5,0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <div class="review-actions">
+                        <button>
+                            <i class="fa-solid fa-thumbs-up"></i> Curtir
+                        </button>
+                        <button>
+                            <i class="fa-solid fa-comment"></i> Comentar
+                        </button>
+                    </div>
                 </div>
             </section>
         </section>
     </main>
-    <script>
-        // Seleciona os botões e os formulários
-        const editProfileBtn = document.getElementById('edit-profile-btn');
-        const changePasswordBtn = document.getElementById('change-password-btn');
-        const editProfileForm = document.getElementById('edit-profile-form');
-        const changePasswordForm = document.getElementById('change-password-form');
-
-        // Função para esconder ambos formulários
-        function hideForms() {
-            editProfileForm.classList.remove('active');
-            changePasswordForm.classList.remove('active');
-        }
-
-        // Mostrar formulário editar perfil e esconder o outro
-        editProfileBtn.addEventListener('click', () => {
-            if (editProfileForm.classList.contains('active')) {
-                hideForms();
-            } else {
-                editProfileForm.classList.add('active');
-                changePasswordForm.classList.remove('active');
-                editProfileForm.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-
-        // Mostrar formulário alterar senha e esconder o outro
-        changePasswordBtn.addEventListener('click', () => {
-            if (changePasswordForm.classList.contains('active')) {
-                hideForms();
-            } else {
-                changePasswordForm.classList.add('active');
-                editProfileForm.classList.remove('active');
-                changePasswordForm.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-
-    </script>
     <script src="https://kit.fontawesome.com/51087b88d3.js" crossorigin="anonymous"></script>
     <script src="../assets/js/script.js"></script>
 </body>

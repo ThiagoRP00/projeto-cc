@@ -26,6 +26,23 @@
                 |
                 <button onclick="showRegister()">Cadastro</button>
             </div>
+            <div class="profile">
+                <button id="profile-btn">
+                    <img src="../assets/images/foto_perfil.png" alt="Perfil">
+                </button>
+                <div class="profile-options-list">
+                    <div>
+                        <img src="../assets/images/foto_perfil.png" alt="Perfil">
+                        <span>Nome</span>
+                    </div>
+                    <hr>
+                    <ul>
+                        <li><a href="perfil_usuario.html"><i class="fa-solid fa-user"></i> Meu perfil</a></li>
+                        <li><a href="#"><i class="fa-solid fa-question"></i> Ajuda</a></li>
+                        <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="mobile-menu-icon">
                 <button onclick="showMenu()"><i id="menu-icon" class="fa-solid fa-bars"></i></button>
             </div>
@@ -162,6 +179,10 @@
                                     <label for="churrasco">Churrasco</label>
                                 </div>
                                 <div class="cooking-selection">
+                                    <input type="checkbox" id="pizza">
+                                    <label for="pizza">Pizza / Esfiha</label>
+                                </div>
+                                <div class="cooking-selection">
                                     <input type="checkbox" id="fruto-mar">
                                     <label for="fruto-mar">Frutos do Mar</label>
                                 </div>
@@ -240,10 +261,11 @@
                 </div>
             </div>
         </div>
+        <section>
             <h1>Restaurantes</h1>
             <div id="cards_container">
                 <div class="card">
-                    <img src="assets\images\restauranteCaseiro.jpg" alt="Restaurante 1">
+                    <img src="assets/images/restauranteCaseiro.jpg" alt="Restaurante 1">
                     <div class="card-content">
                         <h2>Restaurante Sabor Caseiro</h2>
                         <p>Restaurante acolhedor com comida caseira, feita com ingredientes frescos e sabor de lar.</p>
@@ -251,7 +273,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets\images\restauranteBistro.png" alt="Restaurante 2">
+                    <img src="assets/images/restauranteBistro.png" alt="Restaurante 2">
                     <div class="card-content">
                         <h2>Bistrô Delícia</h2>
                         <p>O Bistrô Delícia é um espaço charmoso e aconchegante que combina sabores sofisticados com um
@@ -260,7 +282,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets\images\churrascariaBomBife.jpg" alt="Restaurante 3">
+                    <img src="assets/images/churrascariaBomBife.jpg" alt="Restaurante 3">
                     <div class="card-content">
                         <h2>Churrascaria Bom Bife</h2>
                         <p>A Churrascaria Bom Bife é um restaurante especializado em churrasco no estilo rodízio,
@@ -270,7 +292,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets\images\veggieLife.jpg" alt="Restaurante 4">
+                    <img src="assets/images/veggieLife.jpg" alt="Restaurante 4">
                     <div class="card-content">
                         <h2>Veggie Life</h2>
                         <p>Veggie Life é um restaurante especializado em culinária 100% vegetal, oferecendo pratos
@@ -278,6 +300,7 @@
                         <button class="btn-default">Ver mais</button>
                     </div>
                 </div>
+            </div>
         </section>
         <div id="pagination">
             <button class="pagination-btn" id="first">
