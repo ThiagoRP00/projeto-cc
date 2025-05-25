@@ -147,6 +147,24 @@ sideItems.forEach((item, idx) => {
 
 forms.forEach((f, i) => f.style.display = i === 0 ? 'flex' : 'none');
 
+// ...existing code...
+
+// Habilitar edição dos campos ao clicar em "Alterar"
+document.addEventListener("DOMContentLoaded", function () {
+    const btnAlterar = document.querySelector('#form_1 .btn-default[type="button"]');
+    const form = document.getElementById('form_1');
+
+    if (btnAlterar && form) {
+        btnAlterar.addEventListener('click', function () {
+            const inputs = form.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.removeAttribute('disabled');
+            });
+        });
+    }
+});
+// ...existing code...
+
 // Botão de mostrar filtros de pesquisa de restaurantes
 const btnFilter = document.querySelector(".btn-filter");
 const filterContent = document.querySelector("#filter_content");
