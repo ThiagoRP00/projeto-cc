@@ -1197,6 +1197,10 @@ footer ul {
     font-weight: 100;
 }
 
+dialog {
+    max-width: 500rem;
+}
+
 @media screen and (max-width: 1170px) {
     #hero {
         flex-direction: column;
