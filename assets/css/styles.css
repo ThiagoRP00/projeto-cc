@@ -1066,8 +1066,17 @@ input:-webkit-autofill {
     object-fit: cover;
 }
 
-#change_photo {
-    height: 100%;
+#change_banner input {
+    display: none;
+}
+
+#change_banner {
+    display: flex;
+    max-width: 110rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8rem;
+    margin: 1% 5%;
 }
 
 #restaurant_info {
@@ -1079,6 +1088,18 @@ input:-webkit-autofill {
 
 #restaurant_info .rating {
     color: var(--quaternary-color);
+}
+
+#gallery {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+}
+
+#gallery img {
+    max-width: 300rem;
+    max-height: 300rem;
+    object-fit: cover;
 }
 
 footer {
@@ -1269,7 +1290,7 @@ footer ul {
     }
 
     #profile_content {
-        margin-left: 65rem;
+        padding-left: 65rem;
     }
 
     #profile_header {
