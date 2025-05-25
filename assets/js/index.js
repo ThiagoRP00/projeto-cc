@@ -1,10 +1,13 @@
 const { Pool } = require('pg');
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 const cors = require('cors');
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, '../../')));
 
 const pool = new Pool({
 connectionString: 'postgresql://postgres.zswimtruiwtwrqxadmnl:Coolmida1234@aws-0-sa-east-1.pooler.supabase.com:5432/postgres',
@@ -59,8 +62,7 @@ app.get('/api/restaurantes', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  console.log('Acessou rota ');
-  res.send('Servidor rodando');
+  res.sendFile(path.join(__dirname, '../../', 'index.html'));
 });
 
 app.listen(port, () => {
