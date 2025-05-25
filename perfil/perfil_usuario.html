@@ -7,60 +7,6 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <title>Meu Perfil</title>
     <style>
-        section h2 {
-            margin: 30px 0 15px 0;
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 18rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
-        }
-
-        form.active {
-            display: block;
-        }
-
-        form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #b34700;
-        }
-
-        form input[type="text"],
-        form input[type="email"],
-        form input[type="tel"],
-        form input[type="password"] {
-            width: 100%;
-            padding: 10px 12px;
-            margin-bottom: 18px;
-            border: 2px solid #ff6a00;
-            border-radius: 7px;
-            font-size: 16rem;
-            transition: border-color 0.3s ease;
-        }
-
-        form input:focus {
-            border-color: #ff4500;
-            outline: none;
-        }
-
-        form button[type="submit"] {
-            background: #ff6a00;
-            border: none;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        form button[type="submit"]:hover {
-            background: var(--secondary-color);
-        }
-
-
         .user-reviews .review {
             background: #fff7f0;
             border-left: 4px solid #ff6a00;
@@ -92,7 +38,7 @@
     <header>
         <nav>
             <div id="logo">
-                <a href="index.html"><i class="fa-solid fa-utensils"></i> CoolMida</a>
+                <a href="../index.html"><i class="fa-solid fa-utensils"></i> CoolMida</a>
             </div>
             <div class="menu-items">
                 <ul>
@@ -202,49 +148,242 @@
                 <label id="profile_photo">
                     <input type="file" accept="image/*">
                     <i class="fa-solid fa-camera"></i>
-                </label>                
+                </label>
                 <div id="profile_info">
-                    <div>
+                    <div id="profile_username">
                         <h1>João Silva</h1>
                         <span>@joaosilva</span>
                     </div>
                     <div id="profile_details">
-                        <p>Seguidores: <strong id="count-followers">5</strong></p>
-                        <p>Seguindo: <strong id="count-following">10</strong></p>
-                        <p>Avaliações: <strong id="count-reviews">3</strong></p>
+                        <p>
+                            Seguidores: <strong id="count-followers">5</strong>
+                        </p>
+                        <p>
+                            Seguindo: <strong id="count-following">10</strong>
+                        </p>
+                        <p>
+                            Avaliações: <strong id="count-reviews">3</strong>
+                        </p>
                     </div>
                 </div>
 
             </div>
-
-
-            <!-- Formulário Editar Perfil -->
-            <form id="edit-profile-form" method="POST" action="/atualizar-perfil" novalidate>
-                <h2>Editar Perfil</h2>
-                <label for="nome">Nome Completo</label>
-                <input type="text" id="nome" name="nome" required value="João Silva">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required value="joao.silva@example.com">
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" name="telefone" required value="(11) 98765-4321">
-                <label for="endereco">Endereço</label>
-                <input type="text" id="endereco" name="endereco" required value="Rua Exemplo, 123, São Paulo - SP">
-                <button type="submit">Salvar Alterações</button>
+            <form id="form_1">
+                <h2>Informações Pessoais</h2>
+                <div class="input-container">
+                    <div class="input-box">
+                        <label for="name" class="form-label">Nome</label>
+                        <div class="input-field">
+                            <input type="text" name="name" id="name" class="form-control" disabled value="João">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="last_name" class="form-label">Sobrenome</label>
+                        <div class="input-field">
+                            <input type="text" name="last_name" id="last_name" class="form-control" disabled
+                                value="Silva">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="telphone" class="form-label">Telefone</label>
+                        <div class="input-field">
+                            <input type="text" name="telphone" id="telphone" class="form-control" disabled
+                                value="(11) 98765-4321">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="birthdate" class="form-label">Data de nascimento</label>
+                        <div class="input-field">
+                            <input type="date" name="birthdate" id="birthdate" class="form-control" disabled
+                                value="1990-01-01">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+                <section id="address">
+                    <h3>Endereço</h3>
+                    <div class="input-container">
+                        <div class="input-box">
+                            <label for="street" class="form-label">Rua</label>
+                            <div class="input-field">
+                                <input type="text" name="street" id="street" class="form-control" disabled
+                                    value="Avenida Paulista">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label for="number" class="form-label">Número</label>
+                            <div class="input-field">
+                                <input type="number" name="number" id="number" class="form-control" disabled
+                                    value="1234">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label for="neighborhood" class="form-label">Bairro</label>
+                            <div class="input-field">
+                                <input type="text" name="neighborhood" id="neighborhood" class="form-control" disabled
+                                    value="Centro">
+                                <i class="fa-solid fa-map-marker-alt"></i>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label for="cep" class="form-label">CEP</label>
+                            <div class="input-field">
+                                <input type="text" name="cep" id="cep" class="form-control" disabled value="01310-000">
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label for="city" class="form-label">Cidade</label>
+                            <div class="input-field">
+                                <input type="text" name="city" id="city" class="form-control" disabled
+                                    value="São Paulo">
+                                <i class="fa-solid fa-city"></i>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label for="state" class="form-label">Estado</label>
+                            <div class="input-field">
+                                <select name="state" id="state" class="form-control" disabled>
+                                    <option value="" disabled selected>Selecione o estado</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="MG">Minas Gerais</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="form-btns">
+                    <button type="submit" class="btn-default">
+                        Salvar
+                    </button>
+                    <button type="button" class="btn-default">
+                        Alterar
+                    </button>
+                </div>
             </form>
 
-            <!-- Formulário Alterar Senha -->
-            <form id="change-password-form" method="POST" action="/alterar-senha" novalidate>
+            <form id="form_2">
                 <h2>Alterar Senha</h2>
-                <label for="current-password">Senha Atual</label>
-                <input type="password" id="current-password" name="currentPassword" required minlength="6">
-                <label for="new-password">Nova Senha</label>
-                <input type="password" id="new-password" name="newPassword" required minlength="6">
-                <label for="confirm-password">Confirmar Nova Senha</label>
-                <input type="password" id="confirm-password" name="confirmPassword" required minlength="6">
-                <button type="submit">Atualizar Senha</button>
+                <div class="input-container">
+                    <div class="input-box">
+                        <label for="current_password" class="form-label">Senha Atual</label>
+                        <div class="input-field">
+                            <input type="password" name="current_password" id="current_password" class="form-control">
+                            <i class="fa-solid fa-eye-slash password-icon"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="new_password" class="form-label">Nova Senha</label>
+                        <div class="input-field">
+                            <input type="password" name="new_password" id="new_password" class="form-control">
+                            <i class="fa-solid fa-eye-slash password-icon"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="confirm_password" class="form-label">Confirmar Nova Senha</label>
+                        <div class="input-field">
+                            <input type="password" name="confirm_password" id="confirm_password" class="form-control">
+                            <i class="fa-solid fa-eye-slash password-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-btns">
+                    <button type="submit" class="btn-default">Salvar</button>
+                    <button type="button" id="delete_account">
+                        <i class="fa-solid fa-trash"></i>
+                        Deletar conta
+                    </button>
+                </div>
             </form>
 
-            <!-- Avaliações do usuário -->
+            <form id="form_3">
+                <section id="activities">
+                    <h2>Atividade</h2>
+                    <div class="check">
+                        <input type="checkbox" id="check_comments">
+                        <label for="check_comments">Enviar e-mail quando alguém me seguir</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="answers">
+                        <label for="answers">Enviar e-mail quando alguém comentar minha avaliação</label>
+                    </div>
+                </section>
+                <section>
+                    <h2>Aplicativo</h2>
+                    <div class="check">
+                        <input type="checkbox" id="check_app">
+                        <label for="check_app">Notícias e anúncios</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="check_app_2">
+                        <label for="check_app_2">Promoções e ofertas</label>
+                    </div>
+                </section>
+            </form>
+
+            <form id="form_4">
+                <h2>Tipo de culinária</h2>
+                <div class="cooking">
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="brasileira">
+                        <label for="brasileira">Brasileira</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="japonesa">
+                        <label for="japonesa">Japonesa</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="chinesa">
+                        <label for="chinesa">Chinesa</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="italiana">
+                        <label for="italiana">Italiana</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="mexicana">
+                        <label for="mexicana">Mexicana</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="indiana">
+                        <label for="indiana">Indiana</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="vegana">
+                        <label for="vegana">Vegana / Vegetariana</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="fast-food">
+                        <label for="fast-food">Fast Food</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="churrasco">
+                        <label for="churrasco">Churrasco</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="fruto-mar">
+                        <label for="fruto-mar">Frutos do Mar</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="saudavel">
+                        <label for="saudavel">Saudável / Fit</label>
+                    </div>
+                    <div class="cooking-selection">
+                        <input type="checkbox" id="doce">
+                        <label for="doce">Doces & Sobremesas</label>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn-default">Salvar</button>
+                </div>
+            </form>
+
             <section class="user-reviews">
                 <h2>Minhas Avaliações</h2>
                 <div class="review">
