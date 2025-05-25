@@ -965,7 +965,7 @@ input:-webkit-autofill {
     background-image: url('../images/foto_perfil.png');
     background-size: cover;
     background-position: center;
-    position: relative; 
+    position: relative;
 }
 
 #profile_photo::after {
@@ -1023,7 +1023,8 @@ input:-webkit-autofill {
     gap: 10rem;
 }
 
-#profile_content h2 {
+#profile_content h2,
+#restaurant_info h2 {
     color: var(--secondary-color);
     font-size: 22rem;
 }
@@ -1049,10 +1050,10 @@ input:-webkit-autofill {
 }
 
 #user_reviews {
-            display: flex;
-            flex-direction: column;
-            gap: 20rem;
-        }
+    display: flex;
+    flex-direction: column;
+    gap: 20rem;
+}
 
 #banner {
     width: 100%;
@@ -1066,6 +1067,12 @@ input:-webkit-autofill {
     object-fit: cover;
 }
 
+#restaurant_profile {
+    max-width: 1200rem;
+    margin: 1% auto;
+    padding: 0 5%;
+}
+
 #change_banner input {
     display: none;
 }
@@ -1076,30 +1083,58 @@ input:-webkit-autofill {
     justify-content: center;
     align-items: center;
     border-radius: 8rem;
-    margin: 1% 5%;
+    margin-bottom: 5%;
 }
 
 #restaurant_info {
     display: flex;
     flex-direction: column;
-    margin: 1% 5%;
+    gap: 20rem;
+    margin-bottom: 5%;
+}
+
+#restaurant_info > section:not(#restaurant_header) {
+    display: flex;
+    flex-direction: column;
     gap: 20rem;
 }
 
-#restaurant_info .rating {
-    color: var(--quaternary-color);
+#restaurant_info .review {
+    max-width: 300rem;
 }
 
 #gallery {
     display: flex;
     align-items: center;
     gap: 10rem;
+    overflow: auto;
 }
 
 #gallery img {
     max-width: 300rem;
     max-height: 300rem;
+    border-radius: 8rem;
     object-fit: cover;
+    margin-bottom: 8rem;
+}
+
+#review_form {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20rem;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 100rem;
+    border: none;
+    padding: 5rem;
+}
+
+textarea:focus {
+    outline: none;
 }
 
 footer {
@@ -1305,6 +1340,10 @@ footer ul {
     #profile_details {
         flex-direction: column;
         align-items: center;
+    }
+
+    #review_form {
+        max-width: 100%;
     }
 
     footer ul {

@@ -60,99 +60,97 @@
         </div>
     </header>
     <main>
-        <div>
-            <div id="banner">
-                <img src="../assets/images/camelias-pizza-bar-ltda.jpg" alt="Banner">
-            </div>
-            <label id="change_banner" class="btn-default">
+        <div id="banner">
+            <img src="../assets/images/camelias-pizza-bar-ltda.jpg" alt="Banner">
+        </div>
+        <section id="restaurant_profile">
+            <!-- <label id="change_banner" class="btn-default">
                 Alterar foto
                 <input type="file" accept="image/*">
-            </label>
-        </div>
-        <section id="restaurant_info">
-            <section>
-                <h1 id="restaurant_name">Nome do Restaurante</h1>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span>5,0</span>
-                </div>
-                <div>
-                    Categoria
-                </div>
-            </section>
-            <hr>
-            <div>
-                <div>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Endereço
-                </div>
-                <div>
-                    <i class="fa-solid fa-phone"></i>
-                    Telefone
-                </div>
-                <div>
-                    <i class="fa-solid fa-clock"></i>
-                    Horário de Funcionamento
-                </div>
-            </div>
-            <hr>
-            <section>
-                <h2>Fotos</h2>
-                <div id="gallery">
-                    <img src="../assets/images/camelias-pizza-bar-ltda.jpg" alt="">
-                    <img src="../assets/images/restauranteBistro.png" alt="">
-                </div>
-            </section>
-            <hr>
-            <section>
-                <h2>Avaliações</h2>
-                <div class="review">
-                    <div class="review-info">
-                        <div>
-                            <a href="#"><img src="../assets/images/foto_perfil.png"></a>
-                        </div>
-                        <div class="review-details">
-                            <div>
-                                <a href="#"><strong>Fulano de Tal</strong></a> postou uma avaliação de
-                                <a href="#"><strong>Restaurante</strong></a>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span>5,0</span>
-                            </div>
-                        </div>
+            </label> -->
+            <section id="restaurant_info">
+                <section id="restaurant_header">
+                    <h1>Nome do Restaurante</h1>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>5,0</span>
                     </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <div class="review-actions">
-                        <button>
-                            <i class="fa-solid fa-thumbs-up"></i> Curtir
-                        </button>
-                        <button>
-                            <i class="fa-solid fa-comment"></i> Comentar
-                        </button>
+                    <div>
+                        Categoria
+                    </div>
+                </section>
+                <hr>
+                <div>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Endereço
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-phone"></i>
+                        Telefone
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        Horário de Funcionamento
                     </div>
                 </div>
-            </section>
-            <hr>
-            <section>
-                <h2>Deixe sua Avaliação</h2>
-                <form id="review_form">
-                    <div id="insert_rating">
+                <hr>
+                <section>
+                    <h2>Fotos</h2>
+                    <div id="gallery">
+                        <img src="../assets/images/camelias-pizza-bar-ltda.jpg" alt="">
+                        <img src="../assets/images/restauranteBistro.png" alt="">
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h2>Avaliações</h2>
+                    <div class="review">
+                        <div class="review-info">
+                            <div>
+                                <a href="#"><img src="../assets/images/foto_perfil.png"></a>
+                            </div>
+                            <div class="review-details">
+                                <div>
+                                    <a href="#"><strong>Fulano de Tal</strong></a> postou uma avaliação de
+                                    <a href="#"><strong>Restaurante</strong></a>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5,0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        <div class="review-actions">
+                            <button>
+                                <i class="fa-solid fa-thumbs-up"></i> Curtir
+                            </button>
+                            <button>
+                                <i class="fa-solid fa-comment"></i> Comentar
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section>
+                    <h2>Deixe sua Avaliação</h2>
+                    <form id="review_form">
                         <div class="input-box">
-                            <label for="rating" class="form-label">Nota:</label>
+                            <label for="rating" class="form-label">Nota</label>
                             <div class="input-field">
-                                <select id="rating" name="rating" required>
-                                    <option value="">Selecione a nota</option>
+                                <select name="rating" id="rating" class="form-control" required>
+                                    <option value="" disabled selected>Selecione a nota</option>
                                     <option value="5">5 - Excelente</option>
                                     <option value="4">4 - Muito bom</option>
                                     <option value="3">3 - Bom</option>
@@ -161,14 +159,14 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="input-box">
-                        <label for="review_text" class="form-label">Comentário:</label>
-                        <div class="input-field">
-                            <textarea id="review_text" name="review_text" rows="4" required></textarea>
+                        <div class="input-box">
+                            <label for="review_text" class="form-label">Comentário:</label>
+                            <div class="input-field">
+                                <textarea id="review_text" name="review_text" required></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn-default">Enviar Avaliação</button>
+                        <button type="submit" class="btn-default">Enviar Avaliação</button>
+                </section>
             </section>
         </section>
     </main>
