@@ -170,4 +170,36 @@ app.get('/api/usuarios', async (req, res) => {
     res.status(500).send('Erro na conexão com o banco');
   }
 });
+app.post('/api/avaliacoes', async (req, res) => {
+  const { id_usuario, id_restaurante, nota, comentario } = req.body;
 
+  if (!id_usuario || !id_restaurante || !nota || !comentario) {
+    return res.status(400).send("Preencher todos os campos");
+  }
+
+  if (nota < 1 || nota > 5) {
+    return res.status(400).send("A nota deve estar entre 1 e 5");
+  }
+
+  const client = await getConnection();
+
+  if (client) {
+    try {
+      const query = `
+        INSERT INTO avaliacoes (id_usuario, id_restaurante, nota, comentario)
+        VALUES ($1, $2, $3, $4)
+      `;
+      const values = [id_usuario, id_restaurante, nota, comentario];
+
+      await client.query(query, values);
+      res.status(201).json({ message: "Avaliação cadastrada com sucesso" });
+    } catch (err) {
+      console.error('Erro pra inserir avaliação:', err);
+      res.status(500).json({ message: 'Erro pra salvar avaliação' });
+    } finally {
+      client.release();
+    }
+  } else {
+    res.status(500).send('Erro  conexão com o banco');
+  }
+});
