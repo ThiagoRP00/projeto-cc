@@ -189,5 +189,48 @@
             }
         });
     </script>
+    <script>
+    function showLogin() {
+        const loginDialog = document.querySelector(".box-login");
+        loginDialog.showModal();
+    }
+
+    function closeLogin() {
+        const loginDialog = document.querySelector(".box-login");
+        loginDialog.close();  
+    }
+
+    document.querySelector(".box-login form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const email = document.getElementById("login_email").value;
+        const senha = document.getElementById("login_password").value;
+
+        if (!email || !senha) {
+            alert("Preencha todos os campos");
+            return;
+        }
+
+        try {
+            const response = await fetch("https://projeto-cc.onrender.com/api/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, senha }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert("Login realizado com sucesso!");
+                location.href = "../perfil/perfil_usuario.html"; 
+            } else {
+                const errorData = await response.json();
+                alert("Erro ao fazer login: " + errorData);
+            }
+        } catch (error) {
+            console.error("Erro na requisição de login:", error);
+            alert("Erro de conexão com o servidor.");
+        }
+    });
+</script>
 </body>
 </html>
