@@ -203,3 +203,34 @@ app.post('/api/avaliacoes', async (req, res) => {
     res.status(500).send('Erro  conexão com o banco');
   }
 });
+app.post('/api/login', async (req, res) => {
+  const { email, senha } = req.body;
+
+  if (!email || !senha) {
+    return res.status(400).send("Preencha todos os campos");
+  }
+
+  const client = await getConnection();
+
+  if (client) {
+    try {
+      const query = 'SELECT * FROM usuarios WHERE email = $1 AND senha = $2';
+      const values = [email, senha];
+      const result = await client.query(query, values);
+
+      if (result.rows.length === 0) {
+        return res.status(401).send("E-mail ou senha incorretos");
+      }
+
+      const usuario = result.rows[0];
+      res.status(200).json({ message: "Login bem-sucedido", usuario });
+    } catch (err) {
+      console.error('Erro ao fazer login:', err);
+      res.status(500).send("Erro  no servidor");
+    } finally {
+      client.release();
+    }
+  } else {
+    res.status(500).send("Erro  conexão com o banco");
+  }
+});
